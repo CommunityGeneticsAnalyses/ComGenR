@@ -1,28 +1,25 @@
-\name{CoNetwork}
-\alias{CoNetwork}
+\name{gpmCom}
+\alias{gpmCom}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Co-Occurrence based network modeling.
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-CoNetwork(x, plot.net = TRUE, scalar = 3, min.vsize = 0.1)
+gpmCom(n = "number of species", het.values = c(5, 21), allelic.range = c(0, 3))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{n}{
+%%     ~~Describe \code{n} here~~
 }
-  \item{plot.net}{
-%%     ~~Describe \code{plot.net} here~~
+  \item{het.values}{
+%%     ~~Describe \code{het.values} here~~
 }
-  \item{scalar}{
-%%     ~~Describe \code{scalar} here~~
-}
-  \item{min.vsize}{
-%%     ~~Describe \code{min.vsize} here~~
+  \item{allelic.range}{
+%%     ~~Describe \code{allelic.range} here~~
 }
 }
 \details{
@@ -56,23 +53,19 @@ CoNetwork(x, plot.net = TRUE, scalar = 3, min.vsize = 0.1)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, plot.net = TRUE, scalar = 3, min.vsize = 0.1) 
+function (n = "number of species", het.values = c(5, 21), allelic.range = c(0, 
+    3)) 
 {
-    bc.d <- as.matrix(vegdist(t(x)))
-    prune <- co.net(x)
-    bc.d[prune == 0] <- 0
-    thresh <- percThreshold(bc.d)$threshold
-    pruned.net <- bc.d
-    pruned.net[bc.d < thresh] <- 0
-    if (plot.net) {
-        v.cex <- apply(x, 2, sum)
-        v.cex <- (((v.cex/sum(v.cex))/max((v.cex/sum(v.cex)))) * 
-            scalar) + min.vsize
-        gplot(abs(pruned.net), displaylabels = TRUE, gmode = "graph", 
-            pad = 1.5, edge.lwd = (abs(pruned.net)), vertex.cex = v.cex, 
-            vertex.col = "grey")
+    if (n == "number of species") {
+        n <- 25
     }
-    return(pruned.net)
+    com <- matrix(NA, nrow = n, ncol = 2)
+    com[, 1] <- runif(n, het.values[1], het.values[2])
+    com[, 2] <- runif(n, allelic.range[1], allelic.range[2])
+    com. <- com
+    com.[, 1] <- (com[, 1] - 0.5 * com[, 2])/2
+    com.[, 2] <- (com[, 1] + 0.5 * com[, 2])/2
+    return(com.)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

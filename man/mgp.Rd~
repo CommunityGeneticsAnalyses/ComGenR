@@ -1,32 +1,28 @@
-\name{nullCom}
-\alias{nullCom}
+\name{mgp}
+\alias{mgp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Generate a set of null communities based on functions in the vegan
-package. 
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-nullCom(com, method = "r1", nits = 5000, burn = 500, thin = 10)
+mgp(scn, com, loc = TRUE, my.coord = "")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+  \item{scn}{
+%%     ~~Describe \code{scn} here~~
+}
   \item{com}{
 %%     ~~Describe \code{com} here~~
 }
-  \item{method}{
-%%     ~~Describe \code{method} here~~
+  \item{loc}{
+%%     ~~Describe \code{loc} here~~
 }
-  \item{nits}{
-%%     ~~Describe \code{nits} here~~
-}
-  \item{burn}{
-%%     ~~Describe \code{burn} here~~
-}
-  \item{thin}{
-%%     ~~Describe \code{thin} here~~
+  \item{my.coord}{
+%%     ~~Describe \code{my.coord} here~~
 }
 }
 \details{
@@ -60,19 +56,31 @@ nullCom(com, method = "r1", nits = 5000, burn = 500, thin = 10)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (com, method = "r1", nits = 5000, burn = 500, thin = 10) 
+function (scn, com, loc = TRUE, my.coord = "") 
 {
-    com[com != 0] <- 1
-    for (i in 1:burn) {
-        post.burn <- commsimulator(x = com, method = method, 
-            thin = thin)
+    e.col <- sign(scn)
+    e.col[e.col == 1] <- "grey"
+    e.col[e.col == -1] <- "red"
+    v.cex <- apply(com, 2, sum)
+    v.cex <- log(v.cex, 10)
+    v.cex <- v.cex * (1/min(v.cex))
+    v.cex <- v.cex/2
+    if (length(my.coord) == 1) {
+        coord <- gplot(abs(scn), displaylabels = TRUE, gmode = "graph", 
+            pad = 1.5, edge.col = e.col, edge.lwd = abs(scn), 
+            vertex.cex = v.cex, vertex.col = "darkgrey", vertex.border = "darkgrey")
     }
-    out <- list()
-    for (i in 1:nits) {
-        out[[i]] <- commsimulator(x = post.burn, method = method, 
-            thin = thin)
+    else {
+        coord <- gplot(abs(scn), displaylabels = TRUE, gmode = "graph", 
+            pad = 1.5, edge.col = e.col, edge.lwd = abs(scn), 
+            vertex.cex = v.cex, vertex.col = "darkgrey", vertex.border = "darkgrey", 
+            coord = my.coord)
     }
-    return(out)
+    if (loc) {
+        return(coord)
+    }
+    else {
+    }
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

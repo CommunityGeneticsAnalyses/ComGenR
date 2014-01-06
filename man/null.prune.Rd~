@@ -1,28 +1,25 @@
-\name{CoNetwork}
-\alias{CoNetwork}
+\name{null.prune}
+\alias{null.prune}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Co-Occurrence based network modeling.
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-CoNetwork(x, plot.net = TRUE, scalar = 3, min.vsize = 0.1)
+null.prune(a, b, std = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{a}{
+%%     ~~Describe \code{a} here~~
 }
-  \item{plot.net}{
-%%     ~~Describe \code{plot.net} here~~
+  \item{b}{
+%%     ~~Describe \code{b} here~~
 }
-  \item{scalar}{
-%%     ~~Describe \code{scalar} here~~
-}
-  \item{min.vsize}{
-%%     ~~Describe \code{min.vsize} here~~
+  \item{std}{
+%%     ~~Describe \code{std} here~~
 }
 }
 \details{
@@ -56,23 +53,35 @@ CoNetwork(x, plot.net = TRUE, scalar = 3, min.vsize = 0.1)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, plot.net = TRUE, scalar = 3, min.vsize = 0.1) 
+function (a, b, std = TRUE) 
 {
-    bc.d <- as.matrix(vegdist(t(x)))
-    prune <- co.net(x)
-    bc.d[prune == 0] <- 0
-    thresh <- percThreshold(bc.d)$threshold
-    pruned.net <- bc.d
-    pruned.net[bc.d < thresh] <- 0
-    if (plot.net) {
-        v.cex <- apply(x, 2, sum)
-        v.cex <- (((v.cex/sum(v.cex))/max((v.cex/sum(v.cex)))) * 
-            scalar) + min.vsize
-        gplot(abs(pruned.net), displaylabels = TRUE, gmode = "graph", 
-            pad = 1.5, edge.lwd = (abs(pruned.net)), vertex.cex = v.cex, 
-            vertex.col = "grey")
+    A <- length(a)
+    pa <- sum(a)/A
+    pb <- sum(b)/A
+    paANDb <- pa * pb
+    paORb <- pa + pb - 2 * pa * pb
+    pNOTaORb <- 1 - pa - pb + pa * pb
+    Ei <- A * paANDb
+    Eii <- A * paORb
+    Eiii <- A * pNOTaORb
+    Vi <- A * paANDb * (1 - paANDb)
+    Vii <- A * paORb * (1 - paORb)
+    Viii <- A * pNOTaORb * (1 - pNOTaORb)
+    ci.u <- Ei + 2 * Vi^(1/2)
+    ci.l <- Ei - 2 * Vi^(1/2)
+    Oi <- length(a[(a + b) == 2])
+    if (Oi > ci.u | Oi < ci.l) {
+        if (std) {
+            out <- (Oi - Ei)/sqrt(Vi)
+        }
+        else {
+            out <- Oi
+        }
     }
-    return(pruned.net)
+    else {
+        out <- 0
+    }
+    return(out)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -3,7 +3,8 @@
 \alias{ComGenR}
 \docType{package}
 \title{
-Providing functions for community genetics analyses.
+What the package does (short line)
+~~ package title ~~
 }
 \description{
 More about what it does (maybe more than one line)
