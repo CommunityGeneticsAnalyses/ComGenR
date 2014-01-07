@@ -85,6 +85,36 @@ broken into five main sections:
 %Tree level co-occurrence (genotype effect test)
 %Tree level network (average)
 
+<<>>=
+
+library(ComGenR)
+                                        #model community data
+trees <- gpmTrees()
+com.sim <- cgSim(tree.pheno=trees,reps=1,YY=5,GG=7)
+com <- com.sim[[1]][[5]][[7]]
+geno <- factor(trees[,1])
+                                        #composition
+adonis(com~geno)
+nms <- nmds(vegdist(com),2,2)
+my.nms <- nmds.min(nms)
+ch.plot(my.nms,g=geno,plot.legend=FALSE)
+                                        #networks
+com.net <- com
+com.net[com<=10] <- 0
+net <- CoNetwork(com.net,plot.net=FALSE)
+mgp(net,com.net,displaylabels=TRUE)
+mgp(min.net(net,com.net)[[1]],min.net(net,com.net)[[2]],displaylabels=TRUE)
+                                        #co-occurrence
+com.nul <- nullCom(com.net)
+cs.nul <- unlist(lapply(com.nul,cscore))
+cs.obs <- cscore(com.net)
+hist(cs.nul,xlim=c(5,29))
+abline(v=cs.obs,col=2,lwd=3,lty=2)
+p.val <- length(cs.nul[cs.nul<=cs.obs])/length(cs.nul)
+ses <- (cs.obs-mean(cs.nul))/sd(cs.nul)
+
+@ 
+
 %% %%Figure construction
 %% <<echo=false,results=hide,label=fig1,include=false>>=
 %% @ 
