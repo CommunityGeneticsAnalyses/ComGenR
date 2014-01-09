@@ -5,7 +5,8 @@
   Pruning function for the Araujo et al. 2011 method.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Defines whether or not a node should be included in a network using
+  the analytical methods of Araujo et al. 2011.
 }
 \usage{
 null.prune(a, b, std = TRUE)
@@ -13,17 +14,17 @@ null.prune(a, b, std = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{a}{
-%%     ~~Describe \code{a} here~~
+    Species "a".
 }
   \item{b}{
-%%     ~~Describe \code{b} here~~
+    Species "b".
 }
   \item{std}{
-%%     ~~Describe \code{std} here~~
+    Logical: should the values be standardized?
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  
 }
 \value{
 %%  ~Describe the value returned

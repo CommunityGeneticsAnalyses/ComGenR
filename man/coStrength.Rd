@@ -2,10 +2,11 @@
 \alias{coStrength}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Calculates the strength of interactions.
+Calculates interaction strength.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Calculates node level statistics describing the strength of a species
+  in the network using the methods of Araujo et al. 2011.
 }
 \usage{
 coStrength(x = "dependency network", direction = "in")

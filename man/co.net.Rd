@@ -5,7 +5,8 @@
 Co-occurrence network function.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Conducts network modeling using species abundances via the methods of
+Araujo et al. 2011. 
 }
 \usage{
 co.net(x = "species in cols", diag.zero = TRUE, std = TRUE)
@@ -13,17 +14,19 @@ co.net(x = "species in cols", diag.zero = TRUE, std = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    A community matrix with species in columns.
 }
   \item{diag.zero}{
-%%     ~~Describe \code{diag.zero} here~~
+    
 }
   \item{std}{
 %%     ~~Describe \code{std} here~~
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  All values are converted to present absences within the function. Not
+  using abundance values allows for a different perspective and
+  computational simplicity as compared to using true abundance data. 
 }
 \value{
 %%  ~Describe the value returned

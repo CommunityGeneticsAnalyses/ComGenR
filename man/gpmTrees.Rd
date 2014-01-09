@@ -5,7 +5,8 @@
 Foundation tree species genotype-phenotype mapping function for cgSim. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Generates a matrix of genotypic and phenotypic values using the
+  methods of Shuster et al. 2006 to be used in the cgSim function.
 }
 \usage{
 gpmTrees(pheno = "phenotype of genotypes", reps = "replication")
@@ -13,14 +14,16 @@ gpmTrees(pheno = "phenotype of genotypes", reps = "replication")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{pheno}{
-%%     ~~Describe \code{pheno} here~~
+    A vector of phenotypic values for a set of genotypes. 
 }
   \item{reps}{
-%%     ~~Describe \code{reps} here~~
-}
+    Scalar to set the number of replicates for the genotypes.
+  }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function populates a matrix to be used as the foundation tree
+  species that is influencing a set of species in a community in the
+  cgSim function.
 }
 \value{
 %%  ~Describe the value returned

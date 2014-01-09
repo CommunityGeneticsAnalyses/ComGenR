@@ -2,10 +2,10 @@
 \alias{mgp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Modified graph plotting. 
+Modified graph plotting for network models.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+High level access to the gplot function in the sna package.
 }
 \usage{
 mgp(net='species network',com='community matrix',my.coord='',loc=TRUE,v.scale=3,v.min=0.1)
@@ -13,27 +13,30 @@ mgp(net='species network',com='community matrix',my.coord='',loc=TRUE,v.scale=3,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{net}{
-%%     ~~Describe \code{scn} here~~
-}
+    A network.
+  }
   \item{com}{
-%%     ~~Describe \code{com} here~~
-}
+    The community matrix used to generate the network with species in
+    the same order as the network.
+  }
   \item{my.coord}{
-%%     ~~Describe \code{my.coord} here~~
-}
+    A set of point coordinates to coordinates the nodes in the network.
+  }
   \item{loc}{
-%%     ~~Describe \code{loc} here~~
-}
+    Logical: should the location (i.e. coordinates) of the plotted nodes
+    be returned?
+  }
   \item{v.scale}{
-%%     ~~Describe \code{loc} here~~
+    Value to scale the node (i.e. vertex) size.
 }
   \item{v.min}{
-%%     ~~Describe \code{loc} here~~
-}
+    Minumum size for a node (i.e. vertex). 
+  }
 
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This is a high level function for plotting networks using the sna
+  package specifically tailored for community data based network models.
 }
 \value{
 %%  ~Describe the value returned

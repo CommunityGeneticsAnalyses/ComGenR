@@ -5,7 +5,8 @@
 Conduct pairwise PerMANOVAs. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This function conducts PerMANOVAs for all pairs of levels for a single
+  factor. 
 }
 \usage{
 pair.permanova(x, f, nits = 999)
@@ -13,24 +14,21 @@ pair.permanova(x, f, nits = 999)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    Community matrix.
 }
   \item{f}{
-%%     ~~Describe \code{f} here~~
+    Factor to be used.
 }
   \item{nits}{
-%%     ~~Describe \code{nits} here~~
+    Number of iterations to be used for each PerMANOVA.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This is a high level function built on the adonis function in the
+  vegan package.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  The function returns a matrix of p-values for the comparisons.
 }
 \references{
 %% ~put references to the literature/web site here ~

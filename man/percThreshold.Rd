@@ -5,7 +5,8 @@
 Calculates the percolation threshold.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calculates the percolation threshold to determine the minimal network using the methods of Araujo et
+al. 2011.
 }
 \usage{
 percThreshold(x = "network matrix", step.size = 0.01)
@@ -13,14 +14,14 @@ percThreshold(x = "network matrix", step.size = 0.01)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    A network in matrix form.
 }
   \item{step.size}{
-%%     ~~Describe \code{step.size} here~~
+    The increment to use in determining the threshold.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function is a dependency for the co.net and CoNetwork functions. 
 }
 \value{
 %%  ~Describe the value returned

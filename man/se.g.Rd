@@ -5,7 +5,7 @@
 Calculate the standard error for a set of genotypes.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calculate the standard error for a set of genotypes.
 }
 \usage{
 se.g(x = "community matrix", g = "grouping")
@@ -13,10 +13,10 @@ se.g(x = "community matrix", g = "grouping")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    A community matrix with species in columns.
 }
   \item{g}{
-%%     ~~Describe \code{g} here~~
+    Grouping variable (i.e. genotypes).
 }
 }
 \details{

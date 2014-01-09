@@ -5,7 +5,8 @@
 Calculates the community heritability metric of Shuster et al. 2006. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Conducts the community heritability calculations developed in Shuster et
+al. 2006 based on a single ordination axis. 
 }
 \usage{
 getH2C(x = "NMDS axis", g = "grouping vector", sibs = "sibling proportion (1=clones)")

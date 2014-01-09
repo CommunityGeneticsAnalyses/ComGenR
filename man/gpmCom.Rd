@@ -2,10 +2,12 @@
 \alias{gpmCom}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Genotype-phenotype mapping function for input into the cgSim function. 
+Community genotype-phenotype mapping function.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Creates a set of phenotypes based on genotypic values for a community of
+organisms (e.g. insects) based on the methods of Shuster et
+al. 2006. This is a support function for the cgSim function.
 }
 \usage{
 gpmCom(n = "number of species", het.values = c(5, 21), allelic.range = c(0, 3))
@@ -13,17 +15,19 @@ gpmCom(n = "number of species", het.values = c(5, 21), allelic.range = c(0, 3))
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{n}{
-%%     ~~Describe \code{n} here~~
+    Number of species.
 }
   \item{het.values}{
-%%     ~~Describe \code{het.values} here~~
+    Range of heterozygote values.
 }
   \item{allelic.range}{
-%%     ~~Describe \code{allelic.range} here~~
+    Range of allelic values.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function provides a simple way to populate a set of phenotypic
+  values for a model community to be used in a simulation of community
+  genetics effects.
 }
 \value{
 %%  ~Describe the value returned

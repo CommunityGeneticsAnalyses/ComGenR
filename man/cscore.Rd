@@ -5,7 +5,7 @@
 Calculates the C-Score of Stone and Roberts 1991. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calculates the C-Score of Stone and Roberts 1991. 
 }
 \usage{
 cscore(x, cu.mat = FALSE)
@@ -13,14 +13,15 @@ cscore(x, cu.mat = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    Community matrix of species abundances or present absences with
+    species in columns.
 }
   \item{cu.mat}{
-%%     ~~Describe \code{cu.mat} here~~
-}
+    Logical: should the checkerboard unit matrix be returned?
+  }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  
 }
 \value{
 %%  ~Describe the value returned

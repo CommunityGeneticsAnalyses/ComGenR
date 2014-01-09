@@ -2,10 +2,11 @@
 \alias{calcDepend}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Calculate species dependencies (i.e. conditional probabilities).
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calculates the species dependencies for a given set of species
+abundances as the conditional probability of two species. 
 }
 \usage{
 calcDepend(a, b)
@@ -13,14 +14,14 @@ calcDepend(a, b)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{a}{
-%%     ~~Describe \code{a} here~~
+The abundance of species "a".
 }
   \item{b}{
-%%     ~~Describe \code{b} here~~
+The abundance of species "b".
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+
 }
 \value{
 %%  ~Describe the value returned

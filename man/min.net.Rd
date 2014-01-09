@@ -2,10 +2,11 @@
 \alias{min.net}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+  Minimized network function.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Takes a network and community matrix reduces it to species that have
+  connections in the network.
 }
 \usage{
 min.net(net = "network", com = "community matrix")
@@ -13,14 +14,14 @@ min.net(net = "network", com = "community matrix")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{net}{
-%%     ~~Describe \code{net} here~~
+    A network model in matrix form.
 }
   \item{com}{
-%%     ~~Describe \code{com} here~~
+    A community matrix with species in the same order as the network.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function is useful mainly for plotting.
 }
 \value{
 %%  ~Describe the value returned

@@ -2,31 +2,29 @@
 \alias{dep.net}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Generates the dependency network from Araujo et al. 2011. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Models and conducts network pruning for a species dependency network
+calculated as pairwise conditional probabilities.
 }
 \usage{
-dep.net(x = "species in cols", zero.na = TRUE, prune = TRUE, diag.zero = TRUE, pos = TRUE)
+dep.net(x = "species in cols", zero.na = TRUE, prune = TRUE, diag.zero = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
-}
+    A matrix of species abundances with species in columns.
+  }
   \item{zero.na}{
-%%     ~~Describe \code{zero.na} here~~
-}
+    Automatically make NA values zero.
+  }
   \item{prune}{
-%%     ~~Describe \code{prune} here~~
-}
+    Reduce the size of the network using a confidence interval test.
+  }
   \item{diag.zero}{
-%%     ~~Describe \code{diag.zero} here~~
-}
-  \item{pos}{
-%%     ~~Describe \code{pos} here~~
-}
+    Set the matrix diagonal (i.e. the trace) to zero.
+  }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~

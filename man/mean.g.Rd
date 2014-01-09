@@ -5,7 +5,7 @@
 Calcualtes the mean for a set of genotype.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calcualtes the mean for a set of genotype.
 }
 \usage{
 mean.g(x = "community matrix", g = "grouping")
@@ -13,25 +13,25 @@ mean.g(x = "community matrix", g = "grouping")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    Community matrix with species in columns.
 }
   \item{g}{
-%%     ~~Describe \code{g} here~~
+    Grouping (i.e. genotype) vector.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+% \details{
+
+% }
+% \value{
+% %%  ~Describe the value returned
+% %%  If it is a LIST, use
+% %%  \item{comp1 }{Description of 'comp1'}
+% %%  \item{comp2 }{Description of 'comp2'}
+% %% ...
+% }
+% \references{
+% %% ~put references to the literature/web site here ~
+% }
 \author{
 %%  ~~who you are~~
 }

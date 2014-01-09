@@ -5,7 +5,7 @@
   Network distance for a set of networks.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Takes a list of networks and returns a distance matrix using Euclidean distance.
 }
 \usage{
 netDist(dn.t)
@@ -13,24 +13,25 @@ netDist(dn.t)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dn.t}{
-%%     ~~Describe \code{dn.t} here~~
+    A list of networks to be used for calculating distances.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  This function computes the Euclidean (i.e. straight line) distance
+  using all edges for all pairs of networks in a list of networks. The
+  mathematics of using Euclidean distance to summarize the difference
+  between two networks has not been explored fully, so use with caution.
+
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  Returns a matrix of Euclidean distances for all pairs of networks in
+  the list.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+% \references{
+% %% ~put references to the literature/web site here ~
+% }
 \author{
-%%  ~~who you are~~
+  Matthew K. Lau
 }
 \note{
 %%  ~~further notes~~

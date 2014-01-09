@@ -6,7 +6,8 @@ Generate a set of null communities based on functions in the vegan
 package. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This function produces a set of permuted matrices based on an input
+  species abundance or presence-absence matrix.
 }
 \usage{
 nullCom(com, method = "r1", nits = 5000, burn = 500, thin = 10)
@@ -14,30 +15,32 @@ nullCom(com, method = "r1", nits = 5000, burn = 500, thin = 10)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{com}{
-%%     ~~Describe \code{com} here~~
+    Community matrix with species abundances or
+    presence-absences. Values are converted to presence-absence
+    regardless of input.
 }
   \item{method}{
-%%     ~~Describe \code{method} here~~
+        Permutation method. Options include: r00 = fully random, r0 = maintain
+    site frequencies, r1 = maintain both site and species frequencies. For
+    more options see the oecosimu function in the vegan package.
 }
   \item{nits}{
-%%     ~~Describe \code{nits} here~~
+        Number of iterations to conduct. 
 }
   \item{burn}{
-%%     ~~Describe \code{burn} here~~
+    The number permutations to conduct prior to recording matrices.    
 }
   \item{thin}{
-%%     ~~Describe \code{thin} here~~
+    The number of discarded matrices between iterations.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  Provides high level access to the oecosimu function in vegan.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  Returns a set of permuted matrices to be used for null modeling. The
+  default null model is the most constrained version (i.e. both species
+  and observation marginal totals are restricted).
 }
 \references{
 %% ~put references to the literature/web site here ~

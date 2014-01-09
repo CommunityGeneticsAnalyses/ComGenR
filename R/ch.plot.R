@@ -1,5 +1,5 @@
 ch.plot <-
-function(x='ordination matrix',g='groupings',cex=1,buffer=0.1,plot.legend=TRUE,loc='topleft'){
+function(x='ordination matrix',g='groupings',cex=1,plot.legend=FALSE,loc='topleft'){
   mu <- apply(x,2,function(x,g) tapply(x,g,mean),g=g)
   se <- apply(x,2,function(x,g) tapply(x,g,function(x) sd(x)/sqrt(length(x))),g=g)
   mu <- na.omit(mu)

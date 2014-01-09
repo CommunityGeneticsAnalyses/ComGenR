@@ -2,10 +2,11 @@
 \alias{cnm.test}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Co-occurrence Null Model test.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Provides high level user access to the null modeling tools in the
+vegan package.
 }
 \usage{
 cnm.test(com, method = "r1", nits = 5000, burn = 500, thin = 10)
@@ -13,23 +14,25 @@ cnm.test(com, method = "r1", nits = 5000, burn = 500, thin = 10)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{com}{
-%%     ~~Describe \code{com} here~~
+Community matrix with species in columns.
 }
   \item{method}{
-%%     ~~Describe \code{method} here~~
-}
+    Permutation method. Options include: r00 = fully random, r0 = maintain
+    site frequencies, r1 = maintain both site and species frequencies. For
+    more options see the oecosimu function in the vegan package.
+  }
   \item{nits}{
-%%     ~~Describe \code{nits} here~~
-}
+    Number of iterations to conduct. 
+  }
   \item{burn}{
-%%     ~~Describe \code{burn} here~~
-}
+    The number permutations to conduct prior to recording matrices.
+  }
   \item{thin}{
-%%     ~~Describe \code{thin} here~~
-}
+    The number of discarded matrices between iterations.
+  }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  
 }
 \value{
 %%  ~Describe the value returned

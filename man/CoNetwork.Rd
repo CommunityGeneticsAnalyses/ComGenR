@@ -5,24 +5,15 @@
 Co-Occurrence based network modeling.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Models and plots a network model using the methods of Araujo et al. 2011.
 }
 \usage{
-CoNetwork(x, plot.net = TRUE, scalar = 3, min.vsize = 0.1)
+CoNetwork(x='community matrix')
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{plot.net}{
-%%     ~~Describe \code{plot.net} here~~
-}
-  \item{scalar}{
-%%     ~~Describe \code{scalar} here~~
-}
-  \item{min.vsize}{
-%%     ~~Describe \code{min.vsize} here~~
+    Community matrix with species in columns. 
 }
 }
 \details{

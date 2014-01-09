@@ -3,11 +3,12 @@
 \alias{ComGenR}
 \docType{package}
 \title{
-Providing functions for community genetics analyses.
+  A toolbox for conducting Community Genetics analyses in R.
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+  This package compiles functions for many analysis and modeling
+  techniques used in Community Genetics, including: compositional 
+  analyses, simulations and network modeling.
 }
 \details{
 \tabular{ll}{
@@ -21,13 +22,12 @@ License: \tab What license is it under?\cr
 ~~ functions ~~
 }
 \author{
-Who wrote it
-
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Matthew K. Lau <mkl48@nau.edu>
 }
 \references{
-~~ Literature or other references for background information ~~
+Whitham et al. 2013
+Araujo et al. 2011
+Shuster et al. 2006
 }
 ~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
 ~~ the R documentation directory ~~

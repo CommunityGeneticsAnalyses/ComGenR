@@ -5,7 +5,8 @@
 Calculates the symmetry of species in a network.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  Calculates node level statistics describing the symmetry of species interactions
+  in the network using the methods of Araujo et al. 2011.
 }
 \usage{
 coSym(x = "dependency network", zero.na = TRUE)

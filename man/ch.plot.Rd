@@ -5,47 +5,48 @@
 Cross-hair plotting functions for 2D NMDS plots. 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This is a high level plotting function that produces a "cross-hair"
+  plot of centroids and standard deviations for groups of ordinated points,
+  as is often desired with community genetics data.
 }
 \usage{
-ch.plot(x = "ordination matrix", g = "groupings", cex = 1, buffer = 0.1, plot.legend = TRUE, loc = "topleft")
+ch.plot(x = "ordination matrix", g = "groupings", cex = 1, plot.legend = FALSE, loc = "topleft")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+    Ordination matrix.
 }
   \item{g}{
-%%     ~~Describe \code{g} here~~
+    Grouping (i.e. genotype) vector.
 }
   \item{cex}{
-%%     ~~Describe \code{cex} here~~
-}
-  \item{buffer}{
-%%     ~~Describe \code{buffer} here~~
+    Value to scale centroids.
 }
   \item{plot.legend}{
-%%     ~~Describe \code{plot.legend} here~~
+    Logical: should a legend be generated?
 }
   \item{loc}{
-%%     ~~Describe \code{loc} here~~
+    Location of the legend (e.g. top, top-right, right, bottom-right,
+    bottom, bottom-left,left,top-left).
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+  Simple way to plot centroids of groups of ordinated points with
+  standard error values. 
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+% \value{
+% %%  ~Describe the value returned
+% %%  If it is a LIST, use
+% %%  \item{comp1 }{Description of 'comp1'}
+% %%  \item{comp2 }{Description of 'comp2'}
+% %% ...
+% }
+% \references{
+% %% ~put references to the literature/web site here ~
+% }
 \author{
-%%  ~~who you are~~
+  Matthew K. Lau
 }
 \note{
 %%  ~~further notes~~
