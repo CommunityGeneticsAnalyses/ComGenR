@@ -7,5 +7,5 @@ Author: Matthew K. Lau
 Maintainer: Matthew K. Lau <mkl48@nau.edu>
 Description: This package provides functions for conducting community
 genetics analyses, including: Composition, Heritability and Interaction Networks. 
-Depends: vegan, ecodist, sna, bipartite, igraph
+Depends: vegan, ecodist, sna, bipartite, igraph, pbapply
 License: GPL3
