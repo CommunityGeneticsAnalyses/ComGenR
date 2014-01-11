@@ -1,5 +1,5 @@
 CoNetwork <-
-function(x='community matrix',threshold=10){
+function(x='community matrix'){
 ###Runs all steps of the process for modeling
 ###Co-occurrence networks described by Araujo et al. 2011.
 ###It depends on the seenetR.R script which contains both the
@@ -8,9 +8,6 @@ function(x='community matrix',threshold=10){
 
 ###Inputs: 
 #x = matrix of co-occurrence with species in columns
-
-#Step 0. Remove observations below threshold
-x[x<=threshold] <- 0
 
 #Step 1. Calculate a Bray-Curtis distance matrix
 

@@ -41,4 +41,5 @@ getH2C <- function(x='NMDS axis',g='grouping vector',sibs='sibling proportion (1
   CI <- SE*1.96
   print(c(H2C=H2C,CI=CI,SE=SE))
   return(c(lower.CI=(H2C-CI),H2C=H2C,upper.CI=(H2C+CI)))
+
 }

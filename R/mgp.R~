@@ -10,11 +10,12 @@ e.col[net==0.5] <- 'grey'
 if (length(my.coord)==1){
   coord <- gplot(abs(net),displaylabels=displaylabels,gmode='graph',pad=1.5,
         edge.lwd=(abs(net)),vertex.cex=v.cex,vertex.col='grey',
-        edge.col=e.col,label.lty=1)
+        edge.col=e.col)
+
 }else{
   gplot(abs(net),displaylabels=displaylabels,gmode='graph',pad=1.5,
         edge.lwd=(abs(net)),vertex.cex=v.cex,vertex.col='grey',
-        edge.col=e.col,coord=my.coord,label.lty=1)
+        edge.col=e.col,coord=my.coord)
 }
 if (loc){return(coord)}else{}
 }

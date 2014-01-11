@@ -24,7 +24,6 @@ art_Vz <- matrix(NA,nrow=T,ncol=I) #insect trait variability
 gen_load <- matrix(NA,nrow=T,ncol=I) #insect genetic load
 dem_load <- matrix(NA,nrow=T,ncol=I) #insect demographic load
 art_pop <- matrix(NA,nrow=T,ncol=I) #insect population community matrix
-colnames(art_pop) <- paste('S',I(1:I),sep='')
                                         #STORAGE LIST
 out <- gg.list <- yy.list <- list()
 ###Simulation
