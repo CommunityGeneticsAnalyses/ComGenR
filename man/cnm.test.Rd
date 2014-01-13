@@ -9,7 +9,8 @@ Provides high level user access to the null modeling tools in the
 vegan package.
 }
 \usage{
-cnm.test(com, method = "r1", nits = 5000, burn = 500, thin = 10,threshold=0)
+cnm.test(com, method = "r1", nits = 5000, burn = 500, thin =
+10,threshold=0, null.out = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -34,6 +35,9 @@ Community matrix with species in columns.
     Level of abundance necessary for inclusion in the modeling
     process. This allows for the removal of some species that are at
     levels of abundance that are not likely to be ecologically relevant.
+  }
+  \item{null.out}{
+    Logical: should the null modeled set of communities be returned. 
   }
 }
 \details{

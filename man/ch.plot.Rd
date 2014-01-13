@@ -10,7 +10,8 @@ Cross-hair plotting functions for 2D NMDS plots.
   as is often desired with community genetics data.
 }
 \usage{
-ch.plot(x = "ordination matrix", g = "groupings", cex = 1, plot.legend = FALSE, loc = "topleft")
+ch.plot(x = "ordination matrix", g = "groupings", cex = 1, plot.legend =
+FALSE, loc = "topleft", mu.pch = 19)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,7 +30,10 @@ ch.plot(x = "ordination matrix", g = "groupings", cex = 1, plot.legend = FALSE, 
   \item{loc}{
     Location of the legend (e.g. top, top-right, right, bottom-right,
     bottom, bottom-left,left,top-left).
-}
+  }
+  \item{mu.pch}{
+    Input to define the shape of the centroids.
+  }
 }
 \details{
   Simple way to plot centroids of groups of ordinated points with
