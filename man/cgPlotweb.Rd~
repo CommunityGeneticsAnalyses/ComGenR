@@ -2,14 +2,13 @@
 \alias{cgPlotweb}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Community Genetics simulator using the methods of Shuster et al 2006.
+  Plot a genotype-community bipartite network.
 }
 \description{
-  Function for simulating the community level effects of genetic
-  variation in a clonal foundation species.
+  High level function for using the plotweb function in the bipartite package.
 }
 \usage{
-cgPlotweb(x,g)
+cgPlotweb(x,g=NULL,col.low='black',col.high='black')
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +17,12 @@ cgPlotweb(x,g)
   }
   \item{g}{
     Grouping or genotype vector.
+  }
+  \item{col.low}{
+    Color of the "lower" part of the network.
+  }
+  \item{col.high}{
+    Color of the "higher" part of the network.
   }
 }
 \details{

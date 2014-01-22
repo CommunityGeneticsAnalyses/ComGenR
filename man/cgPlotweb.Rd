@@ -8,7 +8,7 @@
   High level function for using the plotweb function in the bipartite package.
 }
 \usage{
-cgPlotweb(x,g)
+cgPlotweb(x,g=NULL,col.low='black',col.high='black',lab.cex=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,6 +17,15 @@ cgPlotweb(x,g)
   }
   \item{g}{
     Grouping or genotype vector.
+  }
+  \item{col.low}{
+    Color of the "lower" part of the network.
+  }
+  \item{col.high}{
+    Color of the "higher" part of the network.
+  }
+  \item{lab.cex}{
+    Expansion factor for the node labels.
   }
 }
 \details{

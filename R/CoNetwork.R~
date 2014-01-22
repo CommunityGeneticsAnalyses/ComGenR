@@ -1,5 +1,5 @@
 CoNetwork <-
-function(x='community matrix',threshold=0){
+function(x='community matrix',threshold=10){
 ###Runs all steps of the process for modeling
 ###Co-occurrence networks described by Araujo et al. 2011.
 ###It depends on the seenetR.R script which contains both the
