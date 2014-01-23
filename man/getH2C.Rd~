@@ -9,7 +9,7 @@ Conducts the community heritability calculations developed in Shuster et
 al. 2006 based on a single ordination axis. 
 }
 \usage{
-getH2C(x , g = "grouping vector", sibs = "sibling proportion (1=clones)",method='permanova',nits=999)
+getH2C(x , g = "grouping vector", sibs = "sibling proportion (1=clones)")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,19 +20,8 @@ getH2C(x , g = "grouping vector", sibs = "sibling proportion (1=clones)",method=
     A vector of genotypes.
   }
   \item{sibs}{
-    Sibling level? 1 = clonal.
-  }
-  \item{method}{
-    What method? Setting to 'permanova' will return a PERMANOVA based
-    H2C value using the methods of Lamit et al. 2014. Setting to 'nmds'
-    will return an NMDS based H2C value following the methods of Shuster
-    et al. 2006.
-  }
-  \item{inits}{
-    Number of permutations to use for the PERMANOVA.
-  }
-
-
+%%     ~~Describe \code{sibs} here~~
+}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~

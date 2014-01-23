@@ -13,7 +13,6 @@ cgSim(trees="simulated trees",insects="simulated insects",z="selection
 strength",VeT="tree trait variance",Ve="insect environmental
 variance",VeN="interaction environmental variance",K="insect carrying
 capacity",cf="correction factor",artpop.only=FALSE)
-}
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{trees}{Matrix of phenotypic values for a set of trees.}

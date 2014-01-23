@@ -2,7 +2,7 @@ getH2C <- function(x,g='grouping vector',sibs='sibling proportion (1=clones)',me
   if (method=='permanova'){
     out <- as.vector(adonis(x~g,permutations=nits)$aov.tab[1,4:6])
     names(out) <- c('F','H2C','P-value')
-    return(out)
+    return()
   }else{
     if (is.matrix(x)){
       x <- nmds.min(nmds(vegdist(x),1,1))
