@@ -9,10 +9,11 @@ Community Genetics simulator using the methods of Shuster et al 2006.
   variation in a clonal foundation species.
 }
 \usage{
-cgSim(trees="simulated trees",insects="simulated insects",z="selection
-strength",VeT="tree trait variance",Ve="insect environmental
-variance",VeN="interaction environmental variance",K="insect carrying
-capacity",cf="correction factor",artpop.only=FALSE)
+cgSim(trees="simulated trees",insects="simulated insects",
+                  z="selection strength",VeT="tree trait variance",
+                  Ve="insect environmental variance",VeN="interaction environmental variance",
+                  K="insect carrying capacity",k.asym=FALSE,k.min=5,k.max=100,
+                  cf="correction factor",artpop.only=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,8 +24,11 @@ capacity",cf="correction factor",artpop.only=FALSE)
   \item{Ve}{insect environmental variance}
   \item{VeN}{interaction environmental variance}
   \item{K}{insect carrying capacity}
+  \item{k.asym}{Logical: Should default K be asymptotic?}
+  \item{k.min}{Minimum value for K.}
+  \item{k.max}{Maximum value for K}
   \item{cf}{Correction factor numerical error in generating species
-abundances at equilibrium.}
+    abundances at equilibrium.}
   \item{artpop.only}{FALSE}
 }
 \details{

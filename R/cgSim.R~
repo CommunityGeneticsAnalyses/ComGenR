@@ -1,7 +1,8 @@
 cgSim <- function(trees='simulated trees',insects='simulated insects',
                   z='selection strength',VeT='tree trait variance',
                   Ve='insect environmental variance',VeN='interaction environmental variance',
-                  K='insect carrying capacity',cf='correction factor',artpop.only=FALSE){
+                  K='insect carrying capacity',k.asym=FALSE,k.min=5,k.max=100,
+                  cf='correction factor',artpop.only=FALSE){
 
 ###Default Parameter Settings
   ##environmental variance in tree trait influences tree heritability (2 for high H2 and 8 for low H2)
@@ -12,10 +13,6 @@ cgSim <- function(trees='simulated trees',insects='simulated insects',
   if (any(Ve=='insect environmental variance')){Ve <- 0.1}
   ##step size for environmental variance in interactions (0 15 30 45 60)
   if (any(VeN=='interaction environmental variance')){VeN <- 0}
-  ##insect pop carrying capacity
-  if (any(K=='insect carrying capacity')){K <- 100}
-  ##negative abundance correction factor
-  if (any(cf=='correction factor')){cf <- 0}
   ##trees
   if (any(trees=='simulated trees')){
     tree.gpm <- gpmTrees()
@@ -24,6 +21,18 @@ cgSim <- function(trees='simulated trees',insects='simulated insects',
   if (any(insects=='simulated insects')){
     insects <- simSpp()
   }
+  ##insect pop carrying capacity
+  if (any(K=='insect carrying capacity')){
+    if(k.asym){
+      p.k <- 1-ppois(1:nrow(insects),5)
+      k.vector <- (p.k*max.k) + ((1-p.k)*min.k)
+      K <- round(k.vector,0)
+    }else{
+      K <- rep(100,nrow(insects))
+    }
+  }
+  ##negative abundance correction factor
+  if (any(cf=='correction factor')){cf <- 0}
 
 ###Initiate output objects
 T <- length(trees) #number of trees
@@ -79,7 +88,7 @@ for (i in 1:T){
 ###art_pop = n^star_ij = population of species j and tree i at equilibrium
 ###art_pop = (K = carrying capacity) * (community selection) + (E_n_ij = environmental variance)
     En[i,j] <- (runif(1)*VeN-VeN/2)
-    art_pop[i,j] <- K * (1 - gen_load[i,j] - dem_load[i,j]) + En[i,j]
+    art_pop[i,j] <- K[j] * (1 - gen_load[i,j] - dem_load[i,j]) + En[i,j]
 ###preventing art pops from going negative
 ###NOTE: this code was changed from the original which made 
 ###zero or negative species into runif(1)*3)

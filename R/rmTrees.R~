@@ -17,7 +17,6 @@ rmTrees <- function(x='network',method=c('random','degree','type'),type='groupin
       rm.x[rm.tree,] <- 0
       spp.deg <- apply(rm.x,2,sum)
       itr <- itr + 1
-      image(t(rm.x))
     }
     out <- (itr/nrow(x))
   }else if (method[1]=='degree'){
@@ -34,11 +33,10 @@ rmTrees <- function(x='network',method=c('random','degree','type'),type='groupin
       rm.x[rm.tree,] <- 0
       spp.deg <- apply(rm.x,2,sum)
       itr <- itr + 1
-      image(t(rm.x))
     }
     out <- (itr/nrow(x))
   }else if (method[1]=='type'){
-    if (type=='grouping'){warning('Please provide a grouping vector.')}
+    if (any(type=='grouping')){warning('Please provide a grouping vector.')}
     rm.x <- x[,apply(x,2,function(x) sum(x))!=0]
     rm.x[rm.x!=0] <- 1
     itr <- 0
@@ -58,7 +56,6 @@ rmTrees <- function(x='network',method=c('random','degree','type'),type='groupin
       rm.x[rm.tree,] <- 0
       spp.deg <- apply(rm.x,2,sum)
       itr <- itr + 1
-      image(t(rm.x))
     }
     out <- (itr/nrow(x))
   }else{warning('Unknown simulation method.')}
