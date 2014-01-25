@@ -6,7 +6,7 @@ rmTrees <- function(x='network',nits=100,method=c('random','degree','type'),type
   out.nits <- list()
   for (i in 1:nits){
     if (method[1]=='random'){
-      rm.x <- x[,apply(x,2,function(x) sum(x))!=0]
+      rm.x <- x
       rm.x[rm.x!=0] <- 1
       itr <- 0
       spp.deg <- apply(rm.x,2,sum)
@@ -22,7 +22,7 @@ rmTrees <- function(x='network',nits=100,method=c('random','degree','type'),type
       }
       out <- (itr/nrow(x))
     }else if (method[1]=='degree'){
-      rm.x <- x[,apply(x,2,function(x) sum(x))!=0]
+      rm.x <- x
       rm.x[rm.x!=0] <- 1
       itr <- 0
       spp.deg <- apply(rm.x,2,sum)
@@ -39,25 +39,24 @@ rmTrees <- function(x='network',nits=100,method=c('random','degree','type'),type
       out <- (itr/nrow(x))
     }else if (method[1]=='type'){
       if (any(type=='grouping')){warning('Please provide a grouping vector.')}
-      rm.x <- x[,apply(x,2,function(x) sum(x))!=0]
-      rm.x[rm.x!=0] <- 1
+      rm.x <- x
+      live.trees <- rep(1,length(type))
       itr <- 0
-      spp.deg <- apply(rm.x,2,sum)
-      rnd.type <- sample(unique(type),1)
-      rnd.tree <- (1:length(type))[type==rnd.type][1]
-      rm.prob <- as.matrix(dist(type))[rnd.tree,]
-      rm.prob <- rm.prob/max(rm.prob)
-      while(all(spp.deg!=0)){
-        live.trees <- apply(rm.x,1,function(x) sign(sum(x)))
-        rnd.type <- sample(unique(type),1)
-        rnd.tree <- (1:length(type))[type==rnd.type][1]
-        rm.prob <- as.matrix(dist(type))[rnd.tree,]
-        rm.prob <- rm.prob/max(rm.prob)
-        rm.prob[live.trees==0] <- 0
-        rm.tree <- sample((1:nrow(rm.x)),1,prob=rm.prob)
+      spp.deg <- apply(sign(x),2,sum)
+      rm.type <- sample(unique(type[live.trees==1]),1)
+      type.d <- (type - rm.type)^2
+      rm.p <- 1 - (type.d/max(type.d))
+      rm.p[rm.p==0] <- min(rm.p[rm.p!=0])/1000
+      while(all(spp.deg!=0)&any(live.trees==1)){
+        if (sum(live.trees)==1){rm.tree <- (1:length(type))[live.trees==1]}else{
+          rm.p <- rm.p/max(rm.p[live.trees==1])
+          rm.tree <- sample((1:length(type))[live.trees==1],1,prob=rm.p[live.trees==1])
+        }
+                                        #make that tree's community zero
         rm.x[rm.tree,] <- 0
-        spp.deg <- apply(rm.x,2,sum)
         itr <- itr + 1
+        spp.deg <- apply(rm.x,2,sum)
+        live.trees[rm.tree] <- 0
       }
       out <- (itr/nrow(x))
     }else{warning('Unknown simulation method.')}
