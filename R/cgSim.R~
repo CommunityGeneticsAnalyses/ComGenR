@@ -25,7 +25,7 @@ cgSim <- function(trees='simulated trees',insects='simulated insects',
   if (any(K=='insect carrying capacity')){
     if(k.asym){
       p.k <- 1-ppois(1:nrow(insects),5)
-      k.vector <- (p.k*max.k) + ((1-p.k)*min.k)
+      k.vector <- (p.k*k.max) + ((1-p.k)*k.min)
       K <- round(k.vector,0)
     }else{
       K <- rep(100,nrow(insects))
