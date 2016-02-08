@@ -1,10 +1,8 @@
 ### Minimize a network using any network generating function and an abundance threshold
 ### MKLau 7 Feb 2015
 
-minNet <- function(x,start=1,FUN='cdNet',alpha=0.05){
+minNet <- function(x,FUN='cdNet',alpha=0.05){
     thresh <- start
-    m <- x
-    m[m < thresh] <- 0
     g <- get(FUN)(m,alpha=alpha)
     no.c <- no.clusters(graph.adjacency(g,weighted=TRUE))
     while (no.c == 1){
