@@ -8,9 +8,12 @@
 #' using Euclidean distance to summarize the difference between two networks
 #' has not been explored fully, so use with caution.
 #' 
-#' @param dn.t A list of networks to be used for calculating distances.
-#' @return Returns a matrix of Euclidean distances for all pairs of networks in
-#' the list.
+#' @param x A list of networks to be used for calculating distances.
+#' @param zero.na LOGICAL: Should NA values be treated as zeros?
+#' @param method Distance/dissimilarity method to use: "euclidean" or
+#' "bray" for Bray-Curtis.
+#' @return Returns a distance objects of pairwise distance or
+#' dissimilarities for all networks.
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -20,14 +23,29 @@
 #' ##---- Should be DIRECTLY executable !! ----
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
-netDist <- function(dn.t){
-    net.d <- matrix(0,nrow=length(dn.t),ncol=length(dn.t))
-    rownames(net.d) <- colnames(net.d) <- names(dn.t)
-    for (i in 1:nrow(net.d)){
-        for (j in 1:ncol(net.d)){
-            net.d[i,j] <- sum(abs(dn.t[[i]]-dn.t[[j]])^2)
+#' 
+netDist <- function(x, zero.na = TRUE, method = "euclidean"){
+    out <- array(0, dim = rep(length(x), 2))
+    if (!is.null(names(x))){
+        rownames(out) <- colnames(out) <- names(x)
+    }
+    if (grepl("bray", tolower(method)) | tolower(method) == "bc"){
+        for (i in 1:length(x)){
+            for (j in 1:length(x)){
+                y <- data.frame(c(x[[i]][lower.tri(x[[i]])], x[[i]][upper.tri(x[[i]])]), 
+                                c(x[[j]][lower.tri(x[[j]])], x[[i]][upper.tri(x[[i]])]))
+                if (all(y == 0)){y[y == 0] <- 1}
+                out[i, j] <- ecodist::bcdist(t(y))
+            }
+        }
+    }else{
+        for (i in 1:length(x)){
+            for (j in 1:length(x)){
+                out[i, j] <- sum(c((x[[i]][lower.tri(x[[i]])] - x[[j]][lower.tri(x[[j]])]), 
+                                   (x[[i]][upper.tri(x[[i]])] - x[[j]][upper.tri(x[[j]])])^2))^(1/2)
+            }
         }
     }
-    net.d <- as.dist(net.d)
-    return(net.d)
+    if (zero.na){out[is.na(out)] <- 0}
+    dist(out)
 }
