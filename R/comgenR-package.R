@@ -1,5 +1,3 @@
-
-
 #' A toolbox for conducting Community Genetics analyses in R.
 #' 
 #' This package compiles functions for many analysis and modeling techniques
@@ -23,7 +21,3 @@
 #' 
 #' ~~ simple examples of the most important functions ~~
 #' 
-NULL
-
-
-

@@ -11,7 +11,7 @@
 #' @param nits Number of iterations to be used for each PerMANOVA.
 #' @return The function returns a matrix of p-values for the comparisons.
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2

@@ -9,11 +9,9 @@
 #' @param col.low Color of the "lower" part of the network.
 #' @param col.high Color of the "higher" part of the network.
 #' @param lab.cex Expansion factor for the node labels.
-#' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
+#' @return Plot of the bipartite network.
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2

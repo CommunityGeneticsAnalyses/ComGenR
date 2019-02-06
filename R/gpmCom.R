@@ -15,7 +15,7 @@
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
@@ -25,34 +25,18 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (n = "number of species", het.values = c(5, 21), allelic.range = c(0, 
-#'     3)) 
-#' {
-#'     if (n == "number of species") {
-#'         n <- 25
-#'     }
-#'     com <- matrix(NA, nrow = n, ncol = 2)
-#'     com[, 1] <- runif(n, het.values[1], het.values[2])
-#'     com[, 2] <- runif(n, allelic.range[1], allelic.range[2])
-#'     com. <- com
-#'     com.[, 1] <- (com[, 1] - 0.5 * com[, 2])/2
-#'     com.[, 2] <- (com[, 1] + 0.5 * com[, 2])/2
-#'     return(com.)
-#'   }
-#' 
-gpmCom <-
-function(n='number of species',het.values=c(5,21),allelic.range=c(0,3)){
-if (n=='number of species'){n <- 25}
-                                        #generate heterozygous alleles for n species
-com <- matrix(NA,nrow=n,ncol=2)
-com[,1] <- runif(n,het.values[1],het.values[2]) #heterozygote value between 5 and 21
-com[,2] <- runif(n,allelic.range[1],allelic.range[2]) #range between 0 and 3
-                                        #map genotype to phenotype
-com. <- com
-com.[,1] <- (com[,1]-0.5*com[,2])/2 #C allelic value = (HET - 0.5*range)/2
-com.[,2] <- (com[,1]+0.5*com[,2])/2 #D allelic value = (HET + 0.5*range)/2
 
-return(com.)
+gpmCom <- function(n = 'number of species', het.values = c(5,21), allelic.range = c(0,3)){
+    if (n=='number of species'){n <- 25}
+                                        #generate heterozygous alleles for n species
+    com <- matrix(NA,nrow=n,ncol=2)
+    com[,1] <- runif(n,het.values[1],het.values[2]) #heterozygote value between 5 and 21
+    com[,2] <- runif(n,allelic.range[1],allelic.range[2]) #range between 0 and 3
+                                        #map genotype to phenotype
+    com. <- com
+    com.[,1] <- (com[,1]-0.5*com[,2])/2 #C allelic value = (HET - 0.5*range)/2
+    com.[,2] <- (com[,1]+0.5*com[,2])/2 #D allelic value = (HET + 0.5*range)/2
+
+    return(com.)
 
 }

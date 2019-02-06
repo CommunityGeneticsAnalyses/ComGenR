@@ -20,30 +20,14 @@
 #' ##---- Should be DIRECTLY executable !! ----
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
-#' 
-#' ## The function is currently defined as
-#' function (dn.t) 
-#' {
-#'     net.d <- matrix(0, nrow = length(dn.t), ncol = length(dn.t))
-#'     rownames(net.d) <- colnames(net.d) <- names(dn.t)
-#'     for (i in 1:nrow(net.d)) {
-#'         for (j in 1:ncol(net.d)) {
-#'             net.d[i, j] <- sum(abs(dn.t[[i]] - dn.t[[j]])^2)
-#'         }
-#'     }
-#'     net.d <- as.dist(net.d)
-#'     return(net.d)
-#'   }
-#' 
-netDist <-
-function(dn.t){
-  net.d <- matrix(0,nrow=length(dn.t),ncol=length(dn.t))
-  rownames(net.d) <- colnames(net.d) <- names(dn.t)
-  for (i in 1:nrow(net.d)){
-    for (j in 1:ncol(net.d)){
-      net.d[i,j] <- sum(abs(dn.t[[i]]-dn.t[[j]])^2)
+netDist <- function(dn.t){
+    net.d <- matrix(0,nrow=length(dn.t),ncol=length(dn.t))
+    rownames(net.d) <- colnames(net.d) <- names(dn.t)
+    for (i in 1:nrow(net.d)){
+        for (j in 1:ncol(net.d)){
+            net.d[i,j] <- sum(abs(dn.t[[i]]-dn.t[[j]])^2)
+        }
     }
-  }
-  net.d <- as.dist(net.d)
-  return(net.d)
+    net.d <- as.dist(net.d)
+    return(net.d)
 }

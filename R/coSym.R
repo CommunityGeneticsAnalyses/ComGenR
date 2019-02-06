@@ -20,33 +20,15 @@
 #' ##---- Should be DIRECTLY executable !! ----
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
-#' 
-#' ## The function is currently defined as
-#' function (x = "dependency network", zero.na = TRUE) 
-#' {
-#'     out <- x * 0
-#'     for (i in 1:nrow(x)) {
-#'         for (j in 1:ncol(x)) {
-#'             if (max(c(x[i, j], x[j, i])) == 0) {
-#'             }
-#'             else {
-#'                 out[i, j] <- abs(x[i, j] - x[j, i])/max(c(x[i, 
-#'                   j], x[j, i]))
-#'             }
-#'         }
-#'     }
-#'     return(out)
-#'   }
-#' 
-coSym <-
-function(x='dependency network',zero.na=TRUE){
+
+coSym <- function(x = 'dependency network', zero.na = TRUE){
   out <- x * 0
   for (i in 1:nrow(x)){
-    for (j in 1:ncol(x)){
-      if (max(c(x[i,j],x[j,i]))==0){}else{
-        out[i,j] <- abs(x[i,j]-x[j,i])/max(c(x[i,j],x[j,i]))
+      for (j in 1:ncol(x)){
+          if (max(c(x[i,j],x[j,i]))==0){}else{
+              out[i,j] <- abs(x[i,j]-x[j,i])/max(c(x[i,j],x[j,i]))
+          }
       }
-    }
   }
   return(out)
 }

@@ -18,7 +18,7 @@
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau 
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
@@ -28,36 +28,9 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (scn, com, loc = TRUE, my.coord = "") 
-#' {
-#'     e.col <- sign(scn)
-#'     e.col[e.col == 1] <- "grey"
-#'     e.col[e.col == -1] <- "red"
-#'     v.cex <- apply(com, 2, sum)
-#'     v.cex <- log(v.cex, 10)
-#'     v.cex <- v.cex * (1/min(v.cex))
-#'     v.cex <- v.cex/2
-#'     if (length(my.coord) == 1) {
-#'         coord <- gplot(abs(scn), displaylabels = TRUE, gmode = "graph", 
-#'             pad = 1.5, edge.col = e.col, edge.lwd = abs(scn), 
-#'             vertex.cex = v.cex, vertex.col = "darkgrey", vertex.border = "darkgrey")
-#'     }
-#'     else {
-#'         coord <- gplot(abs(scn), displaylabels = TRUE, gmode = "graph", 
-#'             pad = 1.5, edge.col = e.col, edge.lwd = abs(scn), 
-#'             vertex.cex = v.cex, vertex.col = "darkgrey", vertex.border = "darkgrey", 
-#'             coord = my.coord)
-#'     }
-#'     if (loc) {
-#'         return(coord)
-#'     }
-#'     else {
-#'     }
-#'   }
-#' 
-mgp <- function(net='species network',com='community matrix',my.coord='',loc=TRUE,v.scale=3,v.min=0.1,displaylabels=FALSE){
-
+mgp <- function(net = 'species network', com = 'community matrix',
+                my.coord = '', loc = TRUE, v.scale = 3, v.min = 0.1,
+                displaylabels=FALSE){
 v.cex <- apply(com[,apply(com,2,sum)!=0],2,sum) #scaling node size by the log of species frequencies
 v.cex <- (((v.cex/sum(v.cex))/max((v.cex/sum(v.cex))))*v.scale)+v.min
 e.col <- net

@@ -10,7 +10,7 @@
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau 
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
@@ -20,14 +20,6 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (x = "community matrix", g = "grouping") 
-#' {
-#'     return(apply(x, 2, function(x, g) tapply(x, g, function(x) sd(x)/sqrt(length(x))), 
-#'         g = g))
-#'   }
-#' 
-se.g <-
-function(x='community matrix',g='grouping'){
-  return(apply(x,2,function(x,g) tapply(x,g,function(x) sd(x)/sqrt(length(x))),g=g))
+se.g <- function(x = 'community matrix', g = 'grouping'){
+    apply(x,2,function(x,g) tapply(x,g,function(x) sd(x)/sqrt(length(x))),g=g)
 }

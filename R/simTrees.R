@@ -36,6 +36,7 @@
 #'     return(cbind(geno = gl(length(pheno), reps), pheno = unlist(trees)))
 #'   }
 #' 
+
 simTrees <- function(tree.gpm='tree genotype-phenotype map',VeT=2){
   if (length(tree.gpm)==1){tree.gpm <- gpmTrees()}
   T <- nrow(tree.gpm) #number of trees

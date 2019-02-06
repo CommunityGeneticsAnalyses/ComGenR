@@ -12,7 +12,7 @@
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
@@ -22,32 +22,14 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (pheno = "phenotype of genotypes", reps = "replication") 
-#' {
-#'     if (any(pheno == "phenotype of genotypes")) {
-#'         pheno <- c(11, 12.5, 13.75, 16, 14, 15.25, 17.5, 16.5, 
-#'             18.75, 21)
-#'     }
-#'     if (reps == "replication") {
-#'         reps <- 5
-#'     }
-#'     trees <- list()
-#'     for (i in 1:length(pheno)) {
-#'         trees[[i]] <- rep(pheno[i], reps)
-#'     }
-#'     return(cbind(geno = gl(length(pheno), reps), pheno = unlist(trees)))
-#'   }
-#' 
-gpmTrees <-
-function(pheno='phenotype of genotypes',reps='replication'){
-  if (any(pheno=='phenotype of genotypes')){
-    pheno <- c(11.00,12.50,13.75,16.00,14.00,15.25,17.50,16.50,18.75,21.00)
-  }
-  if (reps=='replication'){reps <- 5}
-  trees <- list()
-  for (i in 1:length(pheno)){
-    trees[[i]] <- rep(pheno[i],reps)
-  }
-  return(cbind(geno=gl(length(pheno),reps),pheno=unlist(trees)))
+gpmTrees <- function(pheno = 'phenotype of genotypes', reps = 'replication'){
+    if (any(pheno == 'phenotype of genotypes')){
+        pheno <- c(11.00,12.50,13.75,16.00,14.00,15.25,17.50,16.50,18.75,21.00)
+    }
+    if (reps=='replication'){reps <- 5}
+    trees <- list()
+    for (i in 1:length(pheno)){
+        trees[[i]] <- rep(pheno[i],reps)
+    }
+    return(cbind(geno=gl(length(pheno),reps),pheno=unlist(trees)))
 }

@@ -11,7 +11,7 @@
 #' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
 #' 'comp2'} %% ...
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau 
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
@@ -21,40 +21,7 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (a, b, std = TRUE) 
-#' {
-#'     A <- length(a)
-#'     pa <- sum(a)/A
-#'     pb <- sum(b)/A
-#'     paANDb <- pa * pb
-#'     paORb <- pa + pb - 2 * pa * pb
-#'     pNOTaORb <- 1 - pa - pb + pa * pb
-#'     Ei <- A * paANDb
-#'     Eii <- A * paORb
-#'     Eiii <- A * pNOTaORb
-#'     Vi <- A * paANDb * (1 - paANDb)
-#'     Vii <- A * paORb * (1 - paORb)
-#'     Viii <- A * pNOTaORb * (1 - pNOTaORb)
-#'     ci.u <- Ei + 2 * Vi^(1/2)
-#'     ci.l <- Ei - 2 * Vi^(1/2)
-#'     Oi <- length(a[(a + b) == 2])
-#'     if (Oi > ci.u | Oi < ci.l) {
-#'         if (std) {
-#'             out <- (Oi - Ei)/sqrt(Vi)
-#'         }
-#'         else {
-#'             out <- Oi
-#'         }
-#'     }
-#'     else {
-#'         out <- 0
-#'     }
-#'     return(out)
-#'   }
-#' 
-null.prune <-
-function(a,b,std=TRUE){
+null.prune <- function(a,b,std=TRUE){
 
 ###Method for producing network models from co-occurrence data.
 ###Developed in Araujo et al. 2011 Ecography Using species co-occurrence networks to assess the impacts of climate change

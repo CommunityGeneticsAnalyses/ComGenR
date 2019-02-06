@@ -6,7 +6,7 @@
 #' @param x Community matrix with species in columns.
 #' @param g Grouping (i.e. genotype) vector.
 #' @note %% ~~further notes~~
-#' @author %% ~~who you are~~
+#' @author Matthew K. Lau %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @keywords ~kwd1 ~kwd2
 #' @examples
@@ -15,13 +15,6 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (x = "community matrix", g = "grouping") 
-#' {
-#'     return(apply(x, 2, function(x, g) tapply(x, g, mean), g = g))
-#'   }
-#' 
-mean.g <-
-function(x='community matrix',g='grouping'){
-  return(apply(x,2,function(x,g) tapply(x,g,mean),g=g))
+mean.g <- function(x = 'community matrix', g = 'grouping'){
+    return(apply(x,2,function(x,g) tapply(x,g,mean),g=g))
 }
