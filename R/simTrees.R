@@ -19,24 +19,6 @@
 #' ##-- ==>  Define data, use random,
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
-#' ## The function is currently defined as
-#' function (pheno = "phenotype of genotypes", reps = "replication") 
-#' {
-#'     if (any(pheno == "phenotype of genotypes")) {
-#'         pheno <- c(11, 12.5, 13.75, 16, 14, 15.25, 17.5, 16.5, 
-#'             18.75, 21)
-#'     }
-#'     if (reps == "replication") {
-#'         reps <- 5
-#'     }
-#'     trees <- list()
-#'     for (i in 1:length(pheno)) {
-#'         trees[[i]] <- rep(pheno[i], reps)
-#'     }
-#'     return(cbind(geno = gl(length(pheno), reps), pheno = unlist(trees)))
-#'   }
-#' 
-
 simTrees <- function(tree.gpm='tree genotype-phenotype map',VeT=2){
   if (length(tree.gpm)==1){tree.gpm <- gpmTrees()}
   T <- nrow(tree.gpm) #number of trees
