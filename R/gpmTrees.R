@@ -1,3 +1,44 @@
+#' Foundation tree species genotype-phenotype mapping function for cgSim.
+#' 
+#' Generates a matrix of genotypic and phenotypic values using the methods of
+#' Shuster et al. 2006 to be used in the cgSim function.
+#' 
+#' This function populates a matrix to be used as the foundation tree species
+#' that is influencing a set of species in a community in the cgSim function.
+#' 
+#' @param pheno A vector of phenotypic values for a set of genotypes.
+#' @param reps Scalar to set the number of replicates for the genotypes.
+#' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
+#' 'comp2'} %% ...
+#' @note %% ~~further notes~~
+#' @author %% ~~who you are~~
+#' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
+#' @references %% ~put references to the literature/web site here ~
+#' @keywords ~kwd1 ~kwd2
+#' @examples
+#' 
+#' ##---- Should be DIRECTLY executable !! ----
+#' ##-- ==>  Define data, use random,
+#' ##--	or do  help(data=index)  for the standard data sets.
+#' 
+#' ## The function is currently defined as
+#' function (pheno = "phenotype of genotypes", reps = "replication") 
+#' {
+#'     if (any(pheno == "phenotype of genotypes")) {
+#'         pheno <- c(11, 12.5, 13.75, 16, 14, 15.25, 17.5, 16.5, 
+#'             18.75, 21)
+#'     }
+#'     if (reps == "replication") {
+#'         reps <- 5
+#'     }
+#'     trees <- list()
+#'     for (i in 1:length(pheno)) {
+#'         trees[[i]] <- rep(pheno[i], reps)
+#'     }
+#'     return(cbind(geno = gl(length(pheno), reps), pheno = unlist(trees)))
+#'   }
+#' 
 gpmTrees <-
 function(pheno='phenotype of genotypes',reps='replication'){
   if (any(pheno=='phenotype of genotypes')){

@@ -2,6 +2,15 @@
 ###Tree removal simulator
 ###Three options for removal: 1) random, 2) degree, 3) (geno-, pheno-)type
 
+
+
+#' Tree removal simulator.
+#' 
+#' Removes trees from a matrix under three scenarios.
+#' 
+#' 
+#' @param x 'network'
+#' @param method 'random','degree','type' \itemtype'grouping'
 rmTrees <- function(x='network',nits=100,method=c('random','degree','type'),type='grouping',return.nits=FALSE){
   out.nits <- list()
   for (i in 1:nits){
