@@ -27,7 +27,8 @@
 #' 
 mdc.plot <- function(x, y, pch = 19, col = 1, 
                      ylim = c(-3, 3), xlab, ylab,
-                     ord, std = TRUE, add = FALSE, lg = 0, ug = 1){
+                     ord, std = TRUE, add = FALSE, lg = 0, ug = 1,
+                     xjit = 0){
     if (std){y <- (y - mean(y)) / sd(y)}
     x <- factor(x)
     mu <- tapply(y, x, mean)
@@ -46,7 +47,7 @@ mdc.plot <- function(x, y, pch = 19, col = 1,
              ylab = ylab, xlab = xlab, xaxt = "none", ylim = ylim)
     }
     axis(1, at = x.grid[(1:n + 1)], labels = names(mu))
-    points(x.grid[(1:n + 1)], mu, pch = pch)
+    points(x.grid[(1:n + 1)] + xjit, mu, pch = pch)
     for (i in 1:length(mu)){
         lines(rep(x.grid[(1:n + 1)][i], 2), c(mu[i] - se[i], mu[i] + se[i]))
     }
