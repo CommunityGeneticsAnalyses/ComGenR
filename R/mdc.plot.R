@@ -45,7 +45,7 @@ mdc.plot <- function(x, y, pch = 19, col = 1,
         plot(x.grid, rep(0, length(x.grid)), pch = "", 
              ylab = ylab, xlab = xlab, xaxt = "none", ylim = ylim)
     }
-    axis(1, at = x.grid[(1:n + 1)], labels = levels(x))
+    axis(1, at = x.grid[(1:n + 1)], labels = names(mu))
     points(x.grid[(1:n + 1)], mu, pch = pch)
     for (i in 1:length(mu)){
         lines(rep(x.grid[(1:n + 1)][i], 2), c(mu[i] - se[i], mu[i] + se[i]))
