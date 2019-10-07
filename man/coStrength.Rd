@@ -7,12 +7,12 @@
 coStrength(x = "dependency network", direction = "in")
 }
 \arguments{
-\item{x}{%% ~~Describe \code{x} here~~}
+\item{x}{Dependency network.}
 
-\item{direction}{%% ~~Describe \code{direction} here~~}
+\item{direction}{In or out direction for interaction.}
 }
 \value{
-%% ~Describe the value returned %% If it is a LIST, use %%
+Generates a vector of relative interaction strengths.
 }
 \description{
 Calculates node level statistics describing the strength of a species in the
