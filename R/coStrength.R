@@ -5,9 +5,9 @@
 #' 
 #' %% ~~ If necessary, more details than the description above ~~
 #' 
-#' @param x %% ~~Describe \code{x} here~~
-#' @param direction %% ~~Describe \code{direction} here~~
-#' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @param x Dependency network.
+#' @param direction In or out direction for interaction.
+#' @return Generates a vector of relative interaction strengths.
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
