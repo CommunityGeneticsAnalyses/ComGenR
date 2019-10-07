@@ -7,8 +7,6 @@
 #' @param a The abundance of species "a".
 #' @param b The abundance of species "b".
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

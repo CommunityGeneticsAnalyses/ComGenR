@@ -7,8 +7,6 @@
 #' @param x A community matrix with species in columns.
 #' @param g Grouping variable (i.e. genotypes).
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau 
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

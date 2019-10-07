@@ -12,8 +12,6 @@
 #' @param het.values Range of heterozygote values.
 #' @param allelic.range Range of allelic values.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

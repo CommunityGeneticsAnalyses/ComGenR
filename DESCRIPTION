@@ -9,3 +9,4 @@ Description: This package provides functions for conducting community
 genetics analyses, including: Composition, Heritability and Interaction Networks. 
 Depends: vegan, ecodist, sna, bipartite, pbapply
 License: GPL3
+RoxygenNote: 6.1.1

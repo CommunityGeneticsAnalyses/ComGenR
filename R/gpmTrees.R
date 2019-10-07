@@ -9,8 +9,6 @@
 #' @param pheno A vector of phenotypic values for a set of genotypes.
 #' @param reps Scalar to set the number of replicates for the genotypes.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
