@@ -10,6 +10,7 @@
 #' @param x Ordination matrix.
 #' @param g Grouping (i.e. genotype) vector.
 #' @param cex Value to scale centroids.
+#' @param lwd Line width scaler. 
 #' @param mu.pch Centroid shape.
 #' @param pt.col Centroid color.
 #' @param car.col Error bar color.
@@ -25,7 +26,8 @@
 #' 
 ch.plot <- function(x = 'ordination matrix', 
                     g = 'groupings', 
-                    cex = 1, 
+                    cex = 1,
+                    lwd = 1, 
                     mu.pch = 19,
                     pt.col = 1, 
                     bar.col = 1){
@@ -46,10 +48,10 @@ ch.plot <- function(x = 'ordination matrix',
     for (i in 1:nrow(mu)){
         lines(x = c(cl.xl[i], cl.xu[i]), 
               y = c(mu[i, 2], mu[i, 2]), 
-              col = bar.col)
+              col = bar.col, lwd = lwd)
         lines(x = c(mu[i, 1], mu[i, 1]), 
               y = c(cl.yl[i], cl.yu[i]), 
-              col = bar.col)
+              col = bar.col, lwd = lwd)
         }
     points(mu, cex = cex, col = pt.col, pch = mu.pch)
                                         # Return
