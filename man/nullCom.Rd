@@ -21,7 +21,7 @@ For more options see the oecosimu function in the vegan package.}
 \item{thin}{The number of discarded matrices between iterations.}
 }
 \value{
-Returns a set of permuted matrices to be used for null modeling. The
+Returns a set of permuted matrices to be used for null modeling. The default null model is the most constrained version (i.e. both species and observation marginal totals are restricted).
 }
 \description{
 This function produces a set of permuted matrices based on an input species
