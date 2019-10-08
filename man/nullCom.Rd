@@ -22,8 +22,6 @@ For more options see the oecosimu function in the vegan package.}
 }
 \value{
 Returns a set of permuted matrices to be used for null modeling. The
-default null model is the most constrained version (i.e. both species and
-observation marginal totals are restricted).
 }
 \description{
 This function produces a set of permuted matrices based on an input species

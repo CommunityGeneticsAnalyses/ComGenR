@@ -13,10 +13,8 @@
 #' @param nits Number of iterations to conduct.
 #' @param burn The number permutations to conduct prior to recording matrices.
 #' @param thin The number of discarded matrices between iterations.
-#' @return Returns a set of permuted matrices to be used for null modeling. The
+#' @return Returns a set of permuted matrices to be used for null modeling. The default null model is the most constrained version (i.e. both species and observation marginal totals are restricted).
 #' @export nullCom
-#' default null model is the most constrained version (i.e. both species and
-#' observation marginal totals are restricted).
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -44,8 +42,7 @@
 #'     return(out)
 #'   }
 #' 
-nullCom <-
-function(com,method='r1',nits=5000,burn=500,thin=10){
+nullCom <- function(com,method='r1',nits=5000,burn=500,thin=10){
                                         #force binary
   com[com!=0] <- 1
   for (i in 1:burn){post.burn <- commsimulator(x=com,method=method,thin=thin)}

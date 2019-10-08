@@ -52,8 +52,7 @@
 #'     return(out)
 #'   }
 #' 
- <-
-function(x,f,nits=999){
+pair.permanova <- function(x,f,nits=999){
   require(vegan)
   f. <- sort(unique(f))
   out <- list()

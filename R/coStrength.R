@@ -21,7 +21,7 @@
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
 
- <- function(x = 'dependency network', direction = 'in'){ 
+coStrength <- function(x = 'dependency network', direction = 'in'){ 
     if (direction=='in'){ 
         return(apply(x,2,sum)) 
     }else{
