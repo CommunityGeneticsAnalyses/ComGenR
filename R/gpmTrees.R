@@ -9,6 +9,7 @@
 #' @param pheno A vector of phenotypic values for a set of genotypes.
 #' @param reps Scalar to set the number of replicates for the genotypes.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export gpmTrees
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

@@ -15,6 +15,7 @@
 #' @param v.scale Value to scale the node (i.e. vertex) size.
 #' @param v.min Minumum size for a node (i.e. vertex).
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export mgp
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau 
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

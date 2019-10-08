@@ -7,7 +7,8 @@
 #' @param x A matrix.
 #' @param rel.type Determines whether the matrix will be relativized
 #' by "max" (maximum) or "sum" (total) of each column.
-#' @return Returns the relativzed matrix. 
+#' @return Returns the relativzed matrix.
+#' @export rel
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

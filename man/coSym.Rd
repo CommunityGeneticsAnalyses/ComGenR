@@ -7,37 +7,14 @@
 coSym(x = "dependency network", zero.na = TRUE)
 }
 \arguments{
-\item{x}{%% ~~Describe \code{x} here~~}
+\item{x}{Dependency network.}
 
-\item{zero.na}{%% ~~Describe \code{zero.na} here~~}
+\item{zero.na}{LOGICAL: should zero values be removed?}
 }
 \value{
-%% ~Describe the value returned %% If it is a LIST, use %%
+Generates a measure of co-occurrence matrix symmetry.
 }
 \description{
 Calculates node level statistics describing the symmetry of species
 interactions in the network using the methods of Araujo et al. 2011.
 }
-\details{
-%% ~~ If necessary, more details than the description above ~~
-}
-\note{
-%% ~~further notes~~
-}
-\examples{
-
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\author{
-%% ~~who you are~~
-}
-\keyword{~kwd1}
-\keyword{~kwd2}

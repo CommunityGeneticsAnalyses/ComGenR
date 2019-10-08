@@ -8,19 +8,16 @@
 #' @param g A vector of genotypes for use with ANOVA and REML.
 #' @param perm Number of permutations to use for reml.
 #' @return Returns a heritability score. 
+#' @export H2
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @references %% ~put references to the literature/web site here ~
 #' @keywords ~kwd1 ~kwd2
-#' @examples
-#' 
-#' ##---- Should be DIRECTLY executable !! ----
-#' ##-- ==>  Define data, use random,
-#' ##--	or do  help(data=index)  for the standard data sets.
-#' 
 
-H2 <- function(x = "aov, reml, adonis2 or dbrda object", g = "genotype vector", perm = 10000){
+
+H2 <- function(x = "aov, reml, adonis2 or dbrda object", 
+               g = "genotype vector", perm = 10000){
     if (!(class(x)[1] %in% c("anova.cca", "aov", "dbrda", "lmerMod"))){
         warning("Unknown object.")
         stop()

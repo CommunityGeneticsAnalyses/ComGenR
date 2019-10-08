@@ -7,6 +7,7 @@
 #' @param g Grouping (i.e. genotype) vector.
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau %% ~~who you are~~
+#' @export mean.g
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
 #' @keywords ~kwd1 ~kwd2
 #' @examples

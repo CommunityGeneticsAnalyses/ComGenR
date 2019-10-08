@@ -15,6 +15,7 @@
 #' @param add LOGICAL: should the new values be added to the current plot?
 #' @param lg Lower guide for the x-axis.
 #' @param ug Upper guide for the x-axis.
+#' @export mdc.plot
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

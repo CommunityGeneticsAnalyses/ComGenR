@@ -7,6 +7,7 @@
 #' species in columns.
 #' @param cu.mat Logical: should the checkerboard unit matrix be returned?
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export cscore
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

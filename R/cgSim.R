@@ -19,6 +19,7 @@
 #' at equilibrium.
 #' @param artpop.only FALSE
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export cgSim
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

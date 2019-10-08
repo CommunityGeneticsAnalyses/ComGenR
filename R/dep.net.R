@@ -11,6 +11,7 @@
 #' test.
 #' @param diag.zero Set the matrix diagonal (i.e. the trace) to zero.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export dep.net
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

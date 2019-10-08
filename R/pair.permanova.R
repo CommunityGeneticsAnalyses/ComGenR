@@ -10,6 +10,7 @@
 #' @param f Factor to be used.
 #' @param nits Number of iterations to be used for each PerMANOVA.
 #' @return The function returns a matrix of p-values for the comparisons.
+#' @export pair.permanova
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -51,7 +52,7 @@
 #'     return(out)
 #'   }
 #' 
-pair.permanova <-
+ <-
 function(x,f,nits=999){
   require(vegan)
   f. <- sort(unique(f))

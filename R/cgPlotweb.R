@@ -10,6 +10,7 @@
 #' @param col.high Color of the "higher" part of the network.
 #' @param lab.cex Expansion factor for the node labels.
 #' @return Plot of the bipartite network.
+#' @export cgPlotweb
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

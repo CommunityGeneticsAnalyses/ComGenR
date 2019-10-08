@@ -8,6 +8,7 @@
 #' @param x Dependency network.
 #' @param direction In or out direction for interaction.
 #' @return Generates a vector of relative interaction strengths.
+#' @export coStrength
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -20,7 +21,7 @@
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
 
-coStrength <- function(x = 'dependency network', direction = 'in'){ 
+ <- function(x = 'dependency network', direction = 'in'){ 
     if (direction=='in'){ 
         return(apply(x,2,sum)) 
     }else{

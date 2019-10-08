@@ -6,6 +6,7 @@
 #' @param x Community matrix with species in columns.
 #' @param type Type of co-occurrence count matrix to return. 
 #' @return Returns either co-occurrences (pos) or checkers (neg) counts for all unique non-recursive species pairs%% ~Describe the value returned .
+#' @export CoCo
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

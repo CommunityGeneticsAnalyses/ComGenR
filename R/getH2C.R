@@ -14,6 +14,7 @@
 #' 2006.
 #' @param inits Number of permutations to use for the PERMANOVA.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export getH2C
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

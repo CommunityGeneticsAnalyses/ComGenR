@@ -10,6 +10,7 @@
 #' @param col Vector of length two defining the two levels of color in the
 #' plot.
 #' @return Plot.
+#' @export cgImage
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

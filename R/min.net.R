@@ -8,6 +8,7 @@
 #' @param net A network model in matrix form.
 #' @param com A community matrix with species in the same order as the network.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' @export min.net
 #' @note %% ~~further notes~~
 #' @author %% ~~who you are~~
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

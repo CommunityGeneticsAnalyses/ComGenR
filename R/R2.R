@@ -6,6 +6,7 @@
 #' 
 #' @param x Model object: ANOVA, REML, adonis2 or dbrda. 
 #' @return Returns the R-square value.
+#' @export R2
 #' @note %% ~~further notes~~
 #' @author Matthew K. Lau
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

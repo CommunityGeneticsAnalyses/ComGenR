@@ -14,6 +14,7 @@
 #' @param burn The number permutations to conduct prior to recording matrices.
 #' @param thin The number of discarded matrices between iterations.
 #' @return Returns a set of permuted matrices to be used for null modeling. The
+#' @export nullCom
 #' default null model is the most constrained version (i.e. both species and
 #' observation marginal totals are restricted).
 #' @note %% ~~further notes~~

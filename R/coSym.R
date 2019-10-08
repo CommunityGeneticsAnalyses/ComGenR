@@ -5,6 +5,7 @@
 #' @param x Dependency network.
 #' @param zero.na LOGICAL: should zero values be removed?
 #' @return Generates a measure of co-occurrence matrix symmetry.
+#' @export coSym
 
 coSym <- function(x = 'dependency network', zero.na = TRUE){
   out <- x * 0
