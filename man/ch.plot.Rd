@@ -22,6 +22,9 @@ ch.plot(x = "ordination matrix", g = "groupings", cex = 1, lwd = 1,
 
 \item{car.col}{Error bar color.}
 }
+\value{
+Produces a 2-D plot of centroids with variance bars (i.e. "cross-hairs").
+}
 \description{
 This is a high level plotting function that produces a "cross-hair" plot of
 centroids and standard deviations for groups of ordinated points, as is
@@ -31,19 +34,6 @@ often desired with community genetics data.
 Simple way to plot centroids of groups of ordinated points with standard
 error values.
 }
-\note{
-%% ~~further notes~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-}
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \author{
 Matthew K. Lau
 }
-\keyword{~kwd1}
-\keyword{~kwd2}

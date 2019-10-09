@@ -14,15 +14,9 @@
 #' @param mu.pch Centroid shape.
 #' @param pt.col Centroid color.
 #' @param car.col Error bar color.
+#' @return Produces a 2-D plot of centroids with variance bars (i.e. "cross-hairs").
 #' @export ch.plot
-#' @note %% ~~further notes~~
 #' @author Matthew K. Lau
-#' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
-#' @keywords ~kwd1 ~kwd2
-#' @examples
-#' ##---- Should be DIRECTLY executable !! ----
-#' ##-- ==>  Define data, use random,
-#' ##--	or do  help(data=index)  for the standard data sets.
  
 ch.plot <- function(x = 'ordination matrix', 
                     g = 'groupings', 
