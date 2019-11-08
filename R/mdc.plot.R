@@ -10,6 +10,7 @@
 #' @param ylim Y-axis limits.
 #' @param xlab X-axis label.
 #' @param ylab Y-axis label.
+#' @param xlas X-axis label orientation.
 #' @param ord Re-ordering vector for the predictor levels.
 #' @param std LOGICAL: should y be standardized?
 #' @param add LOGICAL: should the new values be added to the current plot?
@@ -27,7 +28,7 @@
 #' ##--	or do  help(data=index)  for the standard data sets.
 #' 
 mdc.plot <- function(x, y, pch = 19, col = 1, 
-                     ylim = c(-3, 3), xlab, ylab,
+                     ylim = c(-3, 3), xlab, ylab, xlas = 1,
                      ord, std = TRUE, add = FALSE, lg = 0, ug = 1,
                      xjit = 0){
     if (std){y <- (y - mean(y)) / sd(y)}
@@ -45,7 +46,8 @@ mdc.plot <- function(x, y, pch = 19, col = 1,
     if (!exists("ylab")){ylab = ""}
     if (!add){
         plot(x.grid, rep(0, length(x.grid)), pch = "", 
-             ylab = ylab, xlab = xlab, xaxt = "none", ylim = ylim)
+             ylab = ylab, xlab = xlab, 
+             las = xlas, xaxt = "none", ylim = ylim)
     }
     axis(1, at = x.grid[(1:n + 1)], labels = names(mu))
     points(x.grid[(1:n + 1)] + xjit, mu, pch = pch)
