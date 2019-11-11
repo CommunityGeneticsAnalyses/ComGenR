@@ -1,8 +1,8 @@
 Package: ComGenR
 Type: Package
 Title: Functions for COMmunity GENetics analyses in R
-Version: 1.1
-Date: 2019-02-05
+Version: 1.1.1
+Date: 2019-11-08
 Author: Matthew K. Lau
 Maintainer: Matthew K. Lau <mkl48@nau.edu>
 Description: This package provides functions for conducting community
