@@ -24,7 +24,9 @@ ch.plot <- function(x = 'ordination matrix',
                     lwd = 1, 
                     mu.pch = 19,
                     pt.col = 1, 
-                    bar.col = 1){
+                    bar.col = 1,
+                    xlab = "X1", 
+                    ylab = "X2"){
     mu <- apply(x, 2, function(x, g) tapply(x, g, mean), g = g) 
     se <- apply(x, 2, function(x, g) tapply(x, g, function(x)
             sd(x)/sqrt(length(x))), g = g) 

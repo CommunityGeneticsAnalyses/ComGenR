@@ -64,4 +64,3 @@ H2 <- function(x = "aov, reml, adonis2 or dbrda object",
                                         # Heritability
     s2.a /  (s2.a + s2.w)
 }
-
