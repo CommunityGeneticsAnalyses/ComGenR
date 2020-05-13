@@ -4,8 +4,7 @@
 \alias{simSpp}
 \title{Community simulator for running cgSim.}
 \usage{
-simSpp(n = "number of species", het.values = c(5, 21),
-  allelic.range = c(0, 3))
+simSpp(n = "number of species", het.values = c(5, 21), allelic.range = c(0, 3))
 }
 \arguments{
 \item{n}{Number of species.}

@@ -4,8 +4,7 @@
 \alias{gpmCom}
 \title{Community genotype-phenotype mapping function.}
 \usage{
-gpmCom(n = "number of species", het.values = c(5, 21),
-  allelic.range = c(0, 3))
+gpmCom(n = "number of species", het.values = c(5, 21), allelic.range = c(0, 3))
 }
 \arguments{
 \item{n}{Number of species.}

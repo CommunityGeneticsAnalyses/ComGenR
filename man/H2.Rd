@@ -4,8 +4,11 @@
 \alias{H2}
 \title{Calculates heritability metrics from a range of model output.}
 \usage{
-H2(x = "aov, reml, adonis2 or dbrda object", g = "genotype vector",
-  perm = 10000)
+H2(
+  x = "aov, reml, adonis2 or dbrda object",
+  g = "genotype vector",
+  perm = 10000
+)
 }
 \arguments{
 \item{x}{Model object: ANOVA, REML, adonis2 or dbrda.}

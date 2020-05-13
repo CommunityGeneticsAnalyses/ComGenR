@@ -4,8 +4,12 @@
 \alias{getH2C}
 \title{Calculates the community heritability metric of Shuster et al. 2006.}
 \usage{
-getH2C(x, g = "grouping vector",
-  sibs = "sibling proportion (1=clones)", method = "permanova")
+getH2C(
+  x,
+  g = "grouping vector",
+  sibs = "sibling proportion (1=clones)",
+  method = "permanova"
+)
 }
 \arguments{
 \item{x}{A single NMDS axis or a communiy matrix.}

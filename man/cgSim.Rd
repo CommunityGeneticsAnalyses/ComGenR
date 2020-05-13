@@ -4,12 +4,20 @@
 \alias{cgSim}
 \title{Community Genetics simulator using the methods of Shuster et al 2006.}
 \usage{
-cgSim(trees = "simulated trees", insects = "simulated insects",
-  z = "selection strength", VeT = "tree trait variance",
+cgSim(
+  trees = "simulated trees",
+  insects = "simulated insects",
+  z = "selection strength",
+  VeT = "tree trait variance",
   Ve = "insect environmental variance",
   VeN = "interaction environmental variance",
-  K = "insect carrying capacity", k.asym = FALSE, k.min = 5,
-  k.max = 100, cf = "correction factor", artpop.only = FALSE)
+  K = "insect carrying capacity",
+  k.asym = FALSE,
+  k.min = 5,
+  k.max = 100,
+  cf = "correction factor",
+  artpop.only = FALSE
+)
 }
 \arguments{
 \item{trees}{Matrix of phenotypic values for a set of trees.}
