@@ -17,7 +17,8 @@
 
 
 H2 <- function(x = "aov, reml, adonis2 or dbrda object", 
-               g = "genotype vector", perm = 10000){
+               g = "genotype vector", 
+               perm = 10000){
     if (!(class(x)[1] %in% c("anova.cca", "aov", "dbrda", "lmerMod"))){
         warning("Unknown object.")
         stop()
