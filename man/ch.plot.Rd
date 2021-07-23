@@ -4,8 +4,17 @@
 \alias{ch.plot}
 \title{Cross-hair plotting functions for 2D NMDS plots.}
 \usage{
-ch.plot(x = "ordination matrix", g = "groupings", cex = 1, lwd = 1,
-  mu.pch = 19, pt.col = 1, bar.col = 1)
+ch.plot(
+  x = "ordination matrix",
+  g = "groupings",
+  cex = 1,
+  lwd = 1,
+  mu.pch = 19,
+  pt.col = 1,
+  bar.col = 1,
+  xlab = "X1",
+  ylab = "X2"
+)
 }
 \arguments{
 \item{x}{Ordination matrix.}
@@ -19,6 +28,10 @@ ch.plot(x = "ordination matrix", g = "groupings", cex = 1, lwd = 1,
 \item{mu.pch}{Centroid shape.}
 
 \item{pt.col}{Centroid color.}
+
+\item{xlab}{X-axis label: DEFAULT = X1.}
+
+\item{ylab}{Y-axis label: DEFAULT = X2.}
 
 \item{car.col}{Error bar color.}
 }

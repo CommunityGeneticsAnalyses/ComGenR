@@ -4,8 +4,15 @@
 \alias{mgp}
 \title{Modified graph plotting for network models.}
 \usage{
-mgp(net = "species network", com = "community matrix", my.coord = "",
-  loc = TRUE, v.scale = 3, v.min = 0.1, displaylabels = FALSE)
+mgp(
+  net = "species network",
+  com = "community matrix",
+  my.coord = "",
+  loc = TRUE,
+  v.scale = 3,
+  v.min = 0.1,
+  displaylabels = FALSE
+)
 }
 \arguments{
 \item{net}{A network.}

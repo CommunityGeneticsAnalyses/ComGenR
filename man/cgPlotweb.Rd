@@ -4,8 +4,7 @@
 \alias{cgPlotweb}
 \title{Plot a genotype-community bipartite network.}
 \usage{
-cgPlotweb(x, g = "genotypes", col.geno = TRUE, lab.cex = 1,
-  mean.geno = TRUE)
+cgPlotweb(x, g = "genotypes", col.geno = TRUE, lab.cex = 1, mean.geno = TRUE)
 }
 \arguments{
 \item{x}{Bipartite network to be plotted.}

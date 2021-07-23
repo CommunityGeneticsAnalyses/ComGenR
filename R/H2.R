@@ -65,35 +65,3 @@ H2 <- function(x = "aov, reml, adonis2 or dbrda object",
                                         # Heritability
     s2.a /  (s2.a + s2.w)
 }
-
-                                        # r-square
-R2 <- function(x = "aov, reml, adonis2 or dbrda object"){
-    if (!(class(x)[1] %in% c("anova.cca", "aov", "dbrda", "lmerMod"))){
-        warning("Unknown object.")
-        stop()
-    }
-    if (class(x)[1] == "anova.cca"){
-        tab <- as.matrix(x)
-        r2 <- tab[1, "SumOfSqs"] / sum(tab[1:(nrow(tab) - 1), "SumOfSqs"])
-    }else if (class(x)[1] == "aov"){
-        tab <- as.matrix(anova(x))
-        r2 <- tab[1, "Sum Sq"] / (tab[1, "Sum Sq"] + tab[2, "Sum Sq"])
-    }
-    if (class(x)[1] == "dbrda"){
-        r2 <- vegan::RsquareAdj(x)$r.squared
-    }else if (class(x)[1] == "lmerMod"){
-        r2 <- MuMIn::r.squaredGLMM(x)[, "R2c"]
-    }
-    return(r2)
-}
-
-                                        #
-rel <- function(x, rel.type = "max"){
-    if (rel.type == "max"){
-        apply(x , 2, function(x) x / max(x))
-    }else if (rel.type == "sum"){
-        apply(x , 2, function(x) x / sum(x))
-    }else{
-        warning("Unknown relativization type.")
-    }
-}

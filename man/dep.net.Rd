@@ -4,8 +4,7 @@
 \alias{dep.net}
 \title{Generates the dependency network from Araujo et al. 2011.}
 \usage{
-dep.net(x = "species in cols", zero.na = TRUE, prune = TRUE,
-  diag.zero = TRUE)
+dep.net(x = "species in cols", zero.na = TRUE, prune = TRUE, diag.zero = TRUE)
 }
 \arguments{
 \item{x}{A matrix of species abundances with species in columns.}

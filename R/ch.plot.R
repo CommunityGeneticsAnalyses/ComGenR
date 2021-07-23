@@ -14,6 +14,8 @@
 #' @param mu.pch Centroid shape.
 #' @param pt.col Centroid color.
 #' @param car.col Error bar color.
+#' @param xlab X-axis label: DEFAULT = X1.
+#' @param ylab Y-axis label: DEFAULT = X2.
 #' @return Produces a 2-D plot of centroids with variance bars (i.e. "cross-hairs").
 #' @export ch.plot
 #' @author Matthew K. Lau
@@ -24,7 +26,9 @@ ch.plot <- function(x = 'ordination matrix',
                     lwd = 1, 
                     mu.pch = 19,
                     pt.col = 1, 
-                    bar.col = 1){
+                    bar.col = 1,
+                    xlab = "X1", 
+                    ylab = "X2"){
     mu <- apply(x, 2, function(x, g) tapply(x, g, mean), g = g) 
     se <- apply(x, 2, function(x, g) tapply(x, g, function(x)
             sd(x)/sqrt(length(x))), g = g) 
@@ -38,7 +42,8 @@ ch.plot <- function(x = 'ordination matrix',
                                         # plotting
     plot(mu, pch = 0, cex = 0, 
          xlim = c(min(cl.xl), max(cl.xu)), 
-         ylim = c(min(cl.yl), max(cl.yu)))
+         ylim = c(min(cl.yl), max(cl.yu)), 
+         xlab = xlab, ylab = ylab)
     for (i in 1:nrow(mu)){
         lines(x = c(cl.xl[i], cl.xu[i]), 
               y = c(mu[i, 2], mu[i, 2]), 

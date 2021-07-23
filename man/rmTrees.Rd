@@ -4,8 +4,13 @@
 \alias{rmTrees}
 \title{Tree removal simulator.}
 \usage{
-rmTrees(x = "network", nits = 100, method = c("random", "degree",
-  "type"), type = "grouping", return.nits = FALSE)
+rmTrees(
+  x = "network",
+  nits = 100,
+  method = c("random", "degree", "type"),
+  type = "grouping",
+  return.nits = FALSE
+)
 }
 \arguments{
 \item{x}{A network in matrix representation.}

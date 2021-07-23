@@ -4,9 +4,22 @@
 \alias{mdc.plot}
 \title{Mean based dot chart with error bars.}
 \usage{
-mdc.plot(x, y, pch = 19, col = 1, ylim = c(-3, 3), xlab, ylab,
-  xlas = 1, ord, std = TRUE, add = FALSE, lg = 0, ug = 1,
-  xjit = 0)
+mdc.plot(
+  x,
+  y,
+  pch = 19,
+  col = 1,
+  ylim = c(-3, 3),
+  xlab,
+  ylab,
+  xlas = 1,
+  ord,
+  std = TRUE,
+  add = FALSE,
+  lg = 0,
+  ug = 1,
+  xjit = 0
+)
 }
 \arguments{
 \item{x}{Categorical predictor.}
